@@ -1,0 +1,7 @@
+query doctors($filter: FilterDoctor!){
+	doctors( filter: $filter) {
+    id
+    name
+	}
+}
+

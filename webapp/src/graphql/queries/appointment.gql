@@ -1,0 +1,42 @@
+
+query getSlots($slotInput: slotInput!){
+	getSlots( slotInput: $slotInput) {
+		doctorId
+		date
+		availabilities {
+			start
+			end
+			isAvailable
+		}
+	}
+}
+
+query getAppointments($input: FilterAppointment!) {
+	getAppointments(input: $input) {
+		id,
+		date,
+		startTime,
+		endTime,		
+		patientName,
+		description,
+		doctor{
+			id,
+			name
+		}
+	}
+}
+
+
+mutation addAppointment($input: AddAppointmentInput!){
+	addAppointment(
+		input: $input
+	) {
+		patientName
+		startTime
+		doctor {
+			id
+		}
+	}
+}
+
+
